@@ -1,6 +1,6 @@
 package Lesson_2;
 
-public class Main {public static void main(String[] args) throws MyNewException, MyException {
+public class Main {public static void main(String[] args) throws MyArraySizeException, MyArrayDataException {
 
     String[][] array44 = {{"10", "20", "30", "40"}, {"1", "2", "3", "4"}, {"10", "20", "30", "40"}, {"1", "2", "3", "4"}};
 
@@ -10,7 +10,7 @@ public class Main {public static void main(String[] args) throws MyNewException,
     getArray(array33);
 }
 
-    public static void getArray(String[][] array) throws MyNewException, MyException {
+    public static void getArray(String[][] array) throws MyArraySizeException, MyArrayDataException {
 
         int row, column, sum = 0;
 
@@ -20,7 +20,7 @@ public class Main {public static void main(String[] args) throws MyNewException,
         if (array.length == 4 && array[0].length == 4) {
             System.out.println("It's OK!");
         } else {
-            throw new MyNewException("MyNewException: Не верный размер массива!");
+            throw new MyArraySizeException("MyNewException: Не верный размер массива!");
         }
 
         for (int i = 0; i < row; i++) {
@@ -28,7 +28,7 @@ public class Main {public static void main(String[] args) throws MyNewException,
                 try {
                     sum += Integer.parseInt(array[i][j]);
                 } catch (Exception e) {
-                    throw new MyNewException("MyException: Не возможно преобразовать " + i + " : " + j);
+                    throw new MyArrayDataException("MyException: Не возможно преобразовать " + i + " : " + j);
                 }
             }
         }

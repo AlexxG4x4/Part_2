@@ -1,8 +1,8 @@
 package Lesson_2;
 
-class MyException extends Exception{
+class MyArrayDataException extends Exception{
 
-    public MyException(String msg){
+    public MyArrayDataException(String msg){
         super(msg);
     }
 }

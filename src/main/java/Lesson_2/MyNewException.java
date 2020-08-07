@@ -1,7 +1,7 @@
 package Lesson_2;
 
-public class MyNewException extends Exception {
-    public MyNewException(String msg){
+class MyArraySizeException extends Exception {
+    public MyArraySizeException(String msg){
         super(msg);
     }
 }
