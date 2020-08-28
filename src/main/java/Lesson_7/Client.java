@@ -3,9 +3,8 @@ package Lesson_7;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.Scanner;
+
 
 public class Client {
     private final static String SERVER_ADDR = "localhost";
@@ -62,30 +61,8 @@ public class Client {
                 e.printStackTrace();
             }
         });
-        /*
-        Thread trOut = new Thread(() -> {
-            Scanner sc = new Scanner(System.in);
-            try {
-                while (isRunning) {
-                    if (!socket.isConnected()) {
-                        isRunning = false;
-                        break;
-                    }
-                    String str = sc.nextLine();
-                    out.writeUTF(str);
-                    out.flush();
-                    if (str.equalsIgnoreCase("/end")) {
-                        isRunning = false;
-                        break;
-                    }
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
-        */
+
         tr1in.start();
-        //trOut.start();
 
         try {
             tr1in.join();
